@@ -1,0 +1,7 @@
+from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
+motor_pair = MotorPair("A", "B")
+motorL = Motor('A')
+motorR = Motor('B')
+for i in range(4)
+    motor_pair.move_tank(2, 'seconds', left_speed=100, right_speed=-100)
+    motorL.run_for_degrees(90)
