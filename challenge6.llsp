@@ -1,0 +1,13 @@
+from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
+from math import *
+hub=PrimeHub()
+
+distsensor = DistanceSensor('E')
+mtrpair = MotorPair("A", "B")
+
+while True:
+    distsensor.wait_for_distance_farther_than(5, 'cm')
+    mtrpair.start()
+    distsensor.wait_for_distance_closer_than(5,'cm')
+    mtrpair.stop()
+    hub.speaker.beep(40,1)
