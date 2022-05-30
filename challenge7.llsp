@@ -1,0 +1,16 @@
+from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
+from random import randint
+hub = PrimeHub()
+app = App()
+distsensor = DistanceSensor('D')
+def fartdrum():
+    distsensor.wait_for_distance_closer_than(5,'cm')
+    a = randint(1,3)
+    if a == 1:
+        app.start_sound('Fart 1')
+    elif a == 2:
+        app.start_sound('Fart 2')
+    else:
+        app.start_sound('Fart 3')
+while True:
+    fartdrum()
