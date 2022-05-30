@@ -3,13 +3,13 @@ from spike.control import wait_for_seconds, wait_until, Timer
 from math import *
 from time import sleep
 
-color_sensor = ColorSensor('D')
-motorR = Motor("B")
-motor(L) = Motor("A")
+color_sensor = ColorSensor('F')
+motorR = Motor('B')
+motorL = Motor('A')
 
 while True:
-    color_sensor.wait_for_new_color()
+    color = color_sensor.wait_for_new_color()
     if color == 'blue':
-        motorL.run_for_seconds(2.0, -100)
+        motorL.run_for_seconds(1, -100)
     elif color == 'yellow':
-        motorR.run_for_seconds(2.0,100) 
+        motorR.run_for_rotations(1, 100)
